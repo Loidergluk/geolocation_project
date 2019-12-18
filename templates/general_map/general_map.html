@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <!--[if lt IE 9]>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script><![endif]-->
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <script src="https://api-maps.yandex.ru/2.1/?apikey=8722c5c4-fd2b-4a27-9e96-542db10d2d02&lang=ru_RU" type="text/javascript">
+    </script>
+    {% load static %}
+
+    <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
+    
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+          integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+
+
+    <title>Геолокация 2.0</title>
+
+    <script type="text/javascript">
+    ymaps.ready(function () {
+        var map;
+
+        ymaps.geolocation.get().then(function (res) {
+            var mapContainer = $('#map'),
+                bounds = res.geoObjects.get(0).properties.get('boundedBy'),
+                // Рассчитываем видимую область для текущей положения пользователя.
+                mapState = ymaps.util.bounds.getCenterAndZoom(
+                    bounds,
+                    [mapContainer.width(), mapContainer.height()]
+                );
+            createMap(mapState);
+        }, function (e) {
+            // Если местоположение невозможно получить, то просто создаем карту.
+            createMap({
+                center: [55.751574, 37.573856],
+                zoom: 2
+            });
+        });
+
+        function createMap (state) {
+
+            var coords = [
+                [61.950433, 129.630731],
+                [61.95072, 129.630363],
+                [61.951706, 129.630417]
+            ];
+            var balloonContentHeaderList = [
+                "Балун метки 1",
+                "Балун метки 2",
+                "Балун метки 3"
+            ];
+            var balloonContentBodyList = [
+                "Содержимое балуна метки 1",
+                "Содержимое балуна метки 2",
+                "Содержимое балуна метки 3"
+            ];
+            var myCollection = new ymaps.GeoObjectCollection({}, {
+                preset: 'islands#redIcon', //все метки красные
+                draggable: true // и их можно перемещать
+            });
+
+            for (var i = 0; i < coords.length; i++) {
+                myCollection.add(new ymaps.Placemark(coords[i], {
+                // Чтобы балун и хинт открывались на метке, необходимо задать ей определенные свойства.
+                balloonContentHeader: balloonContentHeaderList[i],
+                balloonContentBody: balloonContentBodyList[i]
+                }));
+            }
+            map = new ymaps.Map('map', state);
+            map.geoObjects.add(myCollection);
+
+        }
+
+    });
+    </script>
+
+</head>
+<body>
+
+<!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+        crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+        crossorigin="anonymous"></script>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-sm-12">
+            <h3>Геолокация 2.0</h3>
+        </div>
+    </div>
+</div>
+<div class="container-fluid">
+    <div class="row">
+        <div class="menu col-sm-6 offset-sm-3">
+            <ul class="nav nav-pills nav-fill">
+                <li class="nav-item">
+                    <a class="nav-link active" href="#">Геолокация</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Загрузка данных</a>
+                </li>
+                <li class="nav-item ">
+                    <a class="nav-link" href="#">Отчетность</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">О проекте</a>
+                </li>
+            </ul>
+        </div>
+
+    </div>
+
+
+</div>
+<div class="container-fluid">
+    <div class="row">
+        <div class="left-menu col-sm-3">
+            <h5>Фильтры</h5>
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <label class="select_list input-group-text" for="inputGroupSelect01">Регион</label>
+                </div>
+                <select class="custom-select" id="inputGroupSelect01">
+                    <option selected>Выбрать...</option>
+                    <option value="1">Республика Саха (Якутия)</option>
+                    <option value="2">Республика Бурятия</option>
+                    <option value="3">Иркутская область</option>
+                    <option value="4">Забайкальский край</option>
+                </select>
+            </div>
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <label class="input-group-text" for="inputGroupSelect02">Город</label>
+                </div>
+                <select class="custom-select" id="inputGroupSelect02">
+                    <option selected>Выбрать...</option>
+                    <option value="1">Якутск</option>
+                    <option value="2">Улан-Удэ</option>
+                    <option value="3">Иркутск</option>
+                    <option value="4">Чита</option>
+                </select>
+            </div>
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <label class="input-group-text" for="inputGroupSelect03">Класс</label>
+                </div>
+                <select class="custom-select" id="inputGroupSelect03">
+                    <option selected>Выбрать...</option>
+                    <option value="1">Электроэнергия</option>
+                    <option value="2">Водоснабжение</option>
+                    <option value="3">Теплоснабжение</option>
+                    <option value="4">Управление ЖФ</option>
+                </select>
+            </div>
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <label class="input-group-text" for="inputGroupSelect04">Поставщик</label>
+                </div>
+                <select class="custom-select" id="inputGroupSelect04">
+                    <option selected>Выбрать...</option>
+                    <option value="1">Якутскэнерго</option>
+                    <option value="2">Водоканал</option>
+                    <option value="3">МУП Теплоэнергия</option>
+                    <option value="4">УК ЖКХ Губинский</option>
+                </select>
+            </div>
+            <div>
+                <button type="button" class="btn btn-success">Обновить данные</button>
+            </div>
+        </div>
+        <div class="content col-sm-9">
+            <h5>Основная часть</h5>
+            <div id="map" style="width: 100%; height: 600px; padding: 0; margin: 0;"></div>
+        </div>
+    </div>
+</div>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-sm-12">
+            <h5>Дополнительная информация</h5>
+        </div>
+    </div>
+</div>
+</body>
+
+</html>
