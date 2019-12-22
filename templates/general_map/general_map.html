@@ -21,6 +21,25 @@
     <title>Геолокация 2.0</title>
 
     <script type="text/javascript">
+
+    var coords = [];
+    var balloonContentHeaderList = [];
+    var balloonContentBodyList = [];
+
+    var geopoints_list = '{{ geopoints_list|escapejs }}';
+
+    var jsonData = JSON.parse(geopoints_list);
+    //alert(jsonData[0].fields.klass);
+    alert(jsonData.length);
+
+    for (var i = 0; i < jsonData.length; i++) {
+        coords.push([jsonData[i].fields.latitude, jsonData[i].fields.longitude]);
+        balloonContentHeaderList.push(jsonData[i].fields.adress);
+        balloonContentBodyList.push(jsonData[i].fields.pu);
+    }
+
+    alert(geopoints_list);
+
     ymaps.ready(function () {
         var map;
 
@@ -42,7 +61,7 @@
         });
 
         function createMap (state) {
-
+            /*
             var coords = [
                 [61.950433, 129.630731],
                 [61.95072, 129.630363],
@@ -58,6 +77,8 @@
                 "Содержимое балуна метки 2",
                 "Содержимое балуна метки 3"
             ];
+            
+             */
             var myCollection = new ymaps.GeoObjectCollection({}, {
                 preset: 'islands#redIcon', //все метки красные
                 draggable: true // и их можно перемещать
@@ -188,6 +209,12 @@
     <div class="row">
         <div class="col-sm-12">
             <h5>Дополнительная информация</h5>
+            {{geopoints}}
+            {% for geopoint in geopoints %}
+                <div>
+                    {{geopoint.klass}}
+                </div>
+            {% endfor %}
         </div>
     </div>
 </div>
