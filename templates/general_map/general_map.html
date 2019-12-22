@@ -30,7 +30,7 @@
 
     var jsonData = JSON.parse(geopoints_list);
     //alert(jsonData[0].fields.klass);
-    alert(jsonData.length);
+    //alert(jsonData.length);
 
     for (var i = 0; i < jsonData.length; i++) {
         coords.push([jsonData[i].fields.latitude, jsonData[i].fields.longitude]);
@@ -38,7 +38,7 @@
         balloonContentBodyList.push(jsonData[i].fields.pu);
     }
 
-    alert(geopoints_list);
+    //alert(geopoints_list);
 
     ymaps.ready(function () {
         var map;
@@ -77,7 +77,7 @@
                 "Содержимое балуна метки 2",
                 "Содержимое балуна метки 3"
             ];
-            
+
              */
             var myCollection = new ymaps.GeoObjectCollection({}, {
                 preset: 'islands#redIcon', //все метки красные
@@ -211,9 +211,7 @@
             <h5>Дополнительная информация</h5>
             {{geopoints}}
             {% for geopoint in geopoints %}
-                <div>
-                    {{geopoint.klass}}
-                </div>
+
             {% endfor %}
         </div>
     </div>
