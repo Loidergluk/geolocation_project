@@ -21,6 +21,7 @@ class GeoPoint(models.Model):
     share_of_pay_us = models.FloatField(blank=True, null=True, default=None)
     share_of_pay_vsp = models.FloatField(blank=True, null=True, default=None)
     region = models.CharField(max_length=40, blank=True, null=True, default=None)
+    city = models.CharField(max_length=40, blank=True, null=True, default=None)
     tb = models.CharField(max_length=30, blank=True, null=True, default=None)
 
 def __str__(self):

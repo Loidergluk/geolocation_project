@@ -18,12 +18,7 @@
     <option name="HIDDEN_KINDS">
       <set />
     </option>
-    <expand>
-      <path>
-        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
-        <item name="db" type="feb32156:DbDataSourceImpl" />
-      </path>
-    </expand>
+    <expand />
     <select />
   </component>
   <component name="FileTemplateManagerImpl">
@@ -31,16 +26,18 @@
       <list>
         <option value="HTML File" />
         <option value="Python Script" />
+        <option value="JavaScript File" />
       </list>
     </option>
   </component>
-  <component name="FindInProjectRecents">
-    <findStrings>
-      <find>content</find>
-    </findStrings>
-  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectFrameBounds">
+    <option name="x" value="345" />
+    <option name="y" value="63" />
+    <option name="width" value="1400" />
+    <option name="height" value="1000" />
   </component>
   <component name="ProjectId" id="1V0g0gSRgW8k9KJ3e2yYafJQYk7" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -69,12 +66,46 @@
       <recent name="C:\Users\Владимир\PycharmProjects\geolocation_project\geolocation_project" />
     </key>
   </component>
+  <component name="RunManager">
+    <configuration name="views" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="geolocation_project" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/general_map" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/general_map/views.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python.views" />
+      </list>
+    </recent_temporary>
+  </component>
   <component name="ServiceViewManager">
     <option name="viewStates">
       <list>
         <serviceView>
           <treeState>
-            <expand />
+            <expand>
+              <path>
+                <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
+                <item name="root:db" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+              </path>
+            </expand>
             <select />
           </treeState>
         </serviceView>
@@ -98,7 +129,8 @@
       <workItem from="1576673592385" duration="377000" />
       <workItem from="1576673985945" duration="179000" />
       <workItem from="1576674196064" duration="661000" />
-      <workItem from="1576674945321" duration="15177000" />
+      <workItem from="1576674945321" duration="24998000" />
+      <workItem from="1577542410074" duration="27366000" />
     </task>
     <servers />
   </component>
@@ -106,21 +138,64 @@
     <option name="version" value="1" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="552" y="178" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1577610553259">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="552" y="178" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1577610553259" />
     <state x="785" y="284" key="FileChooserDialogImpl" timestamp="1577003691519">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="785" y="284" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1577003691519" />
-    <state width="196" height="457" key="HiddenNamespacesPopup" timestamp="1577001566485">
+    <state width="1877" height="348" key="GridCell.Tab.0.bottom" timestamp="1577545967373">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="196" height="457" key="HiddenNamespacesPopup/0.0.1920.1040@0.0.1920.1040" timestamp="1577001566485" />
+    <state width="1877" height="348" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1577545967373" />
+    <state width="1877" height="348" key="GridCell.Tab.0.center" timestamp="1577545967373">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="348" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1577545967373" />
+    <state width="1877" height="348" key="GridCell.Tab.0.left" timestamp="1577545967373">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="348" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1577545967373" />
+    <state width="1877" height="348" key="GridCell.Tab.0.right" timestamp="1577545967373">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="348" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1577545967373" />
+    <state width="1877" height="348" key="GridCell.Tab.1.bottom" timestamp="1577545967374">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="348" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1577545967374" />
+    <state width="1877" height="348" key="GridCell.Tab.1.center" timestamp="1577545967374">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="348" key="GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1577545967374" />
+    <state width="1877" height="348" key="GridCell.Tab.1.left" timestamp="1577545967373">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="348" key="GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1577545967373" />
+    <state width="1877" height="348" key="GridCell.Tab.1.right" timestamp="1577545967374">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="348" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1577545967374" />
+    <state width="196" height="457" key="HiddenNamespacesPopup" timestamp="1577610505776">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="196" height="457" key="HiddenNamespacesPopup/0.0.1920.1040@0.0.1920.1040" timestamp="1577610505776" />
     <state x="506" y="172" key="SettingsEditor" timestamp="1577003842201">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="506" y="172" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1577003842201" />
-    <state x="661" y="343" key="com.intellij.ide.util.TipDialog" timestamp="1576674945363">
+    <state x="661" y="343" key="com.intellij.ide.util.TipDialog" timestamp="1577542411230">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="661" y="343" key="com.intellij.ide.util.TipDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1576674945363" />
+    <state x="661" y="343" key="com.intellij.ide.util.TipDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1577542411230" />
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1577623429502">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1577623429502" />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/geolocation_project$views.coverage" NAME="views Coverage Results" MODIFIED="1577545621936" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/general_map" />
   </component>
 </project>
